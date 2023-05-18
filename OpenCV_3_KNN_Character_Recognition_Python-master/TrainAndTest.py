@@ -39,7 +39,7 @@ def main():
     validContoursWithData = []              # we will fill these shortly
 
     try:
-        npaClassifications = np.loadtxt("D:\Code\Python\practice_everyting\ML\OpenCV_3_KNN_Character_Recognition_Python-master\classifications.txt", np.float32)                  # read in training classifications
+        npaClassifications = np.loadtxt("./classifications.txt", np.float32)                  # read in training classifications
     except:
         print ("error, unable to open classifications.txt, exiting program\n")
         os.system("pause")
@@ -47,7 +47,7 @@ def main():
     # end try
 
     try:
-        npaFlattenedImages = np.loadtxt("D:\Code\Python\practice_everyting\ML\OpenCV_3_KNN_Character_Recognition_Python-master\\flattened_images.txt", np.float32)                 # read in training images
+        npaFlattenedImages = np.loadtxt("./flattened_images.txt", np.float32)                 # read in training images
     except:
         print ("error, unable to open flattened_images.txt, exiting program\n")
         os.system("pause")
@@ -60,7 +60,7 @@ def main():
 
     kNearest.train(npaFlattenedImages, cv2.ml.ROW_SAMPLE, npaClassifications)
 
-    imgTestingNumbers = cv2.imread("D:\Code\Python\practice_everyting\ML\OpenCV_3_KNN_Character_Recognition_Python-master\\testplate.JPG")          # read in testing numbers image
+    imgTestingNumbers = cv2.imread("./testplate.JPG")          # read in testing numbers image
     
 
     if imgTestingNumbers is None:                           # if image was not read successfully
